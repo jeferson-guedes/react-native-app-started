@@ -1,19 +1,24 @@
 import React,  {Component} from 'react';
-import {StyleSheet, View, TextInput, TouchableOpacity, Text} from 'react-native';
+import {StyleSheet, View, TextInput, TouchableOpacity, Text, StatusBar} from 'react-native';
 
 export default class LoginForm extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar barStyle="light-content"/>
+                
                 <TextInput 
                     placeholder="username or email"
                     placeholderTextColor="rgba(255,255,255,0.5)"
                     returnKeyType="next"
                     onSubmitEditing={() => this.passwordInput.focus()}
+                    keyboardType="email-address"
+                    autoCapitalize="none"
+                    autoCorrect={false}
                     style={styles.input} 
                     
                 />
-                
+                 
                 <TextInput 
                     placeholder="password"
                     placeholderTextColor="rgba(255,255,255,0.5)"
